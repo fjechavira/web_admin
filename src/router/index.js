@@ -12,6 +12,14 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: () => import('@/views/Login.vue'),
+      meta: {
+        layout: 'full',
+      },
+    },
+    {
+      path: '/home',
       name: 'home',
       component: () => import('@/views/Home.vue'),
       meta: {
@@ -36,14 +44,6 @@ const router = new VueRouter({
             active: true,
           },
         ],
-      },
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('@/views/Login.vue'),
-      meta: {
-        layout: 'full',
       },
     },
     {
