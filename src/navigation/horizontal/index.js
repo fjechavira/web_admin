@@ -4,14 +4,24 @@ export default [
     icon: 'FileIcon',
     children: [
       {
-        title: 'Home',
-        route: 'home',
+        title: 'Dashboard',
+        route: 'dashboard',
         icon: 'HomeIcon',
       },
       {
-        title: 'Second Page',
-        route: 'second-page',
-        icon: 'FileIcon',
+        title: 'Leads',
+        route: 'leads',
+        icon: 'UserPlusIcon',
+      },
+      {
+          title: 'Usuarios',
+          route: 'usuarios',
+        icon: 'UsersIcon',
+      },
+      {
+        title: 'Configuración',
+        route: 'configuracion',
+        icon: 'SettingsIcon',
       },
     ],
   },

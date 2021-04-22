@@ -12,38 +12,38 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      name: 'dashboard',
+      component: () => import('@/views/dashboard/Dashboard.vue'),
+      meta: {
+        pageTitle: 'Dashboard',
+        breadcrumb: [
+          {
+            text: 'Dashboard',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
+      path: '/leads',
+      name: 'leads',
+      component: () => import('@/views/Leads.vue'),
+      meta: {
+        pageTitle: 'Leads',
+        breadcrumb: [
+          {
+            text: 'Leads',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
+      path: '/login',
       name: 'login',
       component: () => import('@/views/Login.vue'),
       meta: {
         layout: 'full',
-      },
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: () => import('@/views/Home.vue'),
-      meta: {
-        pageTitle: 'Home',
-        breadcrumb: [
-          {
-            text: 'Home',
-            active: true,
-          },
-        ],
-      },
-    },
-    {
-      path: '/second-page',
-      name: 'second-page',
-      component: () => import('@/views/SecondPage.vue'),
-      meta: {
-        pageTitle: 'Second Page',
-        breadcrumb: [
-          {
-            text: 'Second Page',
-            active: true,
-          },
-        ],
       },
     },
     {
