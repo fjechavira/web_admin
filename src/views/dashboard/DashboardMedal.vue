@@ -1,21 +1,14 @@
 <template>
   <b-card
-    v-if="data"
     class="card-congratulation-medal"
   >
-    <h5>Congratulations 🎉 David!</h5>
+    <h5>Felicidades 🎉 David!</h5>
     <b-card-text class="font-small-3">
-      You have won gold medal
+      Has alcanzado el nivel oro en en tu meta de leads mensuales.
     </b-card-text>
     <h3 class="mb-75 mt-2 pt-50">
-      <b-link>${{ kFormatter(data.saleToday) }}</b-link>
+      <b-link class="text-warning">Haz ganado un bono de $500.00</b-link>
     </h3>
-    <b-button
-      v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-      variant="primary"
-    >
-      View Sales
-    </b-button>
     <b-img
       :src="require('@/assets/images/illustration/badge.svg')"
       class="congratulation-medal"
@@ -26,7 +19,7 @@
 
 <script>
 import {
-  BCard, BCardText, BLink, BButton, BImg,
+  BCard, BCardText, BLink, BImg,
 } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import { kFormatter } from '@core/utils/filter'
@@ -37,16 +30,9 @@ export default {
     BCardText,
     BLink,
     BImg,
-    BButton,
   },
   directives: {
     Ripple,
-  },
-  props: {
-    data: {
-      type: Object,
-      default: () => {},
-    },
   },
   methods: {
     kFormatter,

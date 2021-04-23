@@ -14,45 +14,26 @@ const router = new VueRouter({
       path: '/',
       name: 'dashboard',
       component: () => import('@/views/dashboard/Dashboard.vue'),
-      meta: {
-        pageTitle: 'Dashboard',
-        breadcrumb: [
-          {
-            text: 'Dashboard',
-            active: true,
-          },
-        ],
-      },
     },
     {
       path: '/leads',
       name: 'leads',
       component: () => import('@/views/Leads.vue'),
-      meta: {
-        pageTitle: 'Leads',
-        breadcrumb: [
-          {
-            text: 'Leads',
-            active: true,
-          },
-        ],
-      },
     },
     {
       path: '/login',
       name: 'login',
       component: () => import('@/views/Login.vue'),
-      meta: {
-        layout: 'full',
-      },
+    },
+    {
+      path: '/agentes',
+      name: 'agentes',
+      component: () => import('@/views/agents/Agents.vue'),
     },
     {
       path: '/error-404',
       name: 'error-404',
       component: () => import('@/views/error/Error404.vue'),
-      meta: {
-        layout: 'full',
-      },
     },
     {
       path: '*',

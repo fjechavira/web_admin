@@ -10,8 +10,8 @@ export default [
     icon: 'UserPlusIcon',
   },
   {
-      title: 'Usuarios',
-      route: 'usuarios',
+    title: 'Agentes',
+    route: 'agentes',
     icon: 'UsersIcon',
   },
   {
