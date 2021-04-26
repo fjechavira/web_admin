@@ -1,3 +1,10 @@
+export const validatorRequired = value => {
+  if (value === undefined || value === null || value.length === 0) {
+    return false
+  }
+  return true
+}
+
 export const validatorPositive = value => {
   if (value >= 0) {
     return true

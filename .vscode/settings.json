@@ -10,7 +10,7 @@
     "files.exclude": {
       "public": true,
       "src/@core": true,
-      "src/assets": true,
+      "src/assets": false,
       "src/libs": true,
       "node_modules": true,
       ".gitignore": true,

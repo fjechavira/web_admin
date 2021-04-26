@@ -24,7 +24,7 @@ export default function useUsersList() {
       sortable: true,
     },
     { key: 'status', sortable: true },
-    { key: 'actions' },
+    { key: 'acciones' },
   ]
   const perPage = ref(10)
   const totalUsers = ref(0)

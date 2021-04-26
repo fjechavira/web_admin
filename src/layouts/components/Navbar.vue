@@ -30,15 +30,15 @@
         <template #button-content>
           <div class="d-sm-flex d-none user-nav">
             <p class="user-name font-weight-bolder mb-0">
-              John Doe
+              {{ $store.state.user.name }}
             </p>
-            <span class="user-status">Admin</span>
+            <span class="user-status">{{ $store.state.user.type }}</span>
           </div>
           <b-avatar
             size="40"
             variant="light-primary"
             badge
-            :src="require('@/assets/images/avatars/13-small.png')"
+            :src="$store.state.user.pp"
             class="badge-minimal"
             badge-variant="success"
           />
@@ -50,34 +50,7 @@
             icon="UserIcon"
             class="mr-50"
           />
-          <span>Profile</span>
-        </b-dropdown-item>
-
-        <b-dropdown-item link-class="d-flex align-items-center">
-          <feather-icon
-            size="16"
-            icon="MailIcon"
-            class="mr-50"
-          />
-          <span>Inbox</span>
-        </b-dropdown-item>
-
-        <b-dropdown-item link-class="d-flex align-items-center">
-          <feather-icon
-            size="16"
-            icon="CheckSquareIcon"
-            class="mr-50"
-          />
-          <span>Task</span>
-        </b-dropdown-item>
-
-        <b-dropdown-item link-class="d-flex align-items-center">
-          <feather-icon
-            size="16"
-            icon="MessageSquareIcon"
-            class="mr-50"
-          />
-          <span>Chat</span>
+          <span>Perfil</span>
         </b-dropdown-item>
 
         <b-dropdown-divider />
@@ -88,7 +61,7 @@
             icon="LogOutIcon"
             class="mr-50"
           />
-          <span>Logout</span>
+          <span>Salir</span>
         </b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>

@@ -1,6 +1,5 @@
 import { extend, localize } from 'vee-validate'
 import {
-  required as rule_required,
   email as rule_email,
   min as rule_min,
   confirmed as rule_confirmed,
@@ -17,13 +16,11 @@ import ar from 'vee-validate/dist/locale/ar.json'
 import en from 'vee-validate/dist/locale/en.json'
 
 // eslint-disable-next-line object-curly-newline
-import { validatorPositive, validatorUrlValidator, validatorPassword, validatorCreditCard } from './validators'
+import { validatorRequired, validatorPositive, validatorUrlValidator, validatorPassword, validatorCreditCard } from './validators'
 
 // ////////////////////////////////////////////////////////
 // General
 // ////////////////////////////////////////////////////////
-
-export const required = extend('required', rule_required)
 
 export const email = extend('email', rule_email)
 
@@ -46,6 +43,11 @@ export const alphaDash = extend('alpha-dash', rule_alpha_dash)
 export const alphaNum = extend('alpha-num', rule_alpha_num)
 
 export const length = extend('length', rule_length)
+
+export const required = extend('required', {
+  validate: validatorRequired,
+  message: 'El {_field_} es obligatorio',
+})
 
 export const positive = extend('positive', {
   validate: validatorPositive,

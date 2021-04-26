@@ -12,18 +12,21 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: () => import('@/views/Login.vue'),
+      meta: {
+        layout: 'full',
+      },
+    },
+    {
+      path: '/dashboard',
       name: 'dashboard',
       component: () => import('@/views/dashboard/Dashboard.vue'),
     },
     {
       path: '/leads',
       name: 'leads',
-      component: () => import('@/views/Leads.vue'),
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('@/views/Login.vue'),
+      component: () => import('@/views/leads/Leads.vue'),
     },
     {
       path: '/agentes',

@@ -40,9 +40,9 @@
                 placeholder="Buscar..."
               />
               <b-button
-                variant="primary"
+                variant="secondary"
               >
-                <span class="text-nowrap">Agregar Usuario</span>
+                <span class="text-nowrap">Agregar agente</span>
               </b-button>
             </div>
           </b-col>
@@ -131,12 +131,12 @@
 
             <b-dropdown-item :to="{ name: 'apps-users-edit', params: { id: data.item.id } }">
               <feather-icon icon="EditIcon" />
-              <span class="align-middle ml-50">Editar</span>
+              <span class="align-middle ml-50">Edit</span>
             </b-dropdown-item>
 
             <b-dropdown-item>
               <feather-icon icon="TrashIcon" />
-              <span class="align-middle ml-50">Eliminar</span>
+              <span class="align-middle ml-50">Delete</span>
             </b-dropdown-item>
           </b-dropdown>
         </template>
