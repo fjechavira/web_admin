@@ -1,8 +1,10 @@
 import axios from '@axios'
+import router from '@/router'
 
 export default {
   namespaced: true,
   state: {
+    loggedIn: false,
     jwt: '',
     name: 'David Martinez',
     type: 'Administrador',
@@ -14,18 +16,21 @@ export default {
       state.type = data.type
       state.pp = data.pp
     },
+    loginSuccess(state, token) {
+      state.loggedIn = true
+      state.jwt = token
+    },
   },
   actions: {
-    login({ username, password }) {
-      console.log(username)
-      console.log(password)
+    login({ commit }, { username, password }) {
       axios.request({
         method: 'POST',
         url: 'https://api.esquimal.mx/auth/token',
         headers: { 'Content-Type': 'application/json' },
         data: { username, password },
       }).then(res => {
-        console.log(res)
+        commit('loginSuccess', res.data.token)
+        router.push('dashboard')
       }).catch(error => {
         console.log(error)
       })

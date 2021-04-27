@@ -38,7 +38,7 @@
             :options="sortOptions"
             class="w-75"
           >
-            <template v-slot:first>
+            <template #first>
               <option value="">
                 -- none --
               </option>

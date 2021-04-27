@@ -31,7 +31,7 @@
               label="Usuario"
             >
               <validation-provider
-                #default="{ errors }"
+                v-slot="{ errors }"
                 name="Usuario"
               >
                 <b-form-input
@@ -52,7 +52,7 @@
                 <label for="password">Contraseña</label>
               </div>
               <validation-provider
-                #default="{ errors }"
+                v-slot="{ errors }"
                 name="Password"
               >
                 <b-input-group

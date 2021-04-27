@@ -1,6 +1,6 @@
 <template>
   <b-card title="Leads 🙌">
-    <b-card-text></b-card-text>
+    <b-card-text />
   </b-card>
 </template>
 

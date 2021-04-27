@@ -1,7 +1,10 @@
 <template>
   <section id="dashboard-ecommerce">
     <b-row class="match-height">
-      <b-col xl="4" md="6">
+      <b-col
+        xl="4"
+        md="6"
+      >
         <DashboardMedal />
       </b-col>
     </b-row>

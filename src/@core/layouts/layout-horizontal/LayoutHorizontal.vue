@@ -71,7 +71,7 @@
       >
         <template
           v-for="(index, name) in $scopedSlots"
-          v-slot:[name]="data"
+          #[name]="data"
         >
           <slot
             :name="name"
@@ -141,14 +141,6 @@ export default {
     VerticalNavMenu,
   },
   mixins: [mixinLayoutHorizontal],
-  computed: {
-    layoutContentRenderer() {
-      const rendererType = this.$route.meta.contentRenderer
-      if (rendererType === 'sidebar-left') return 'layout-content-renderer-left'
-      if (rendererType === 'sidebar-left-detached') return 'layout-content-renderer-left-detached'
-      return 'layout-content-renderer-default'
-    },
-  },
   setup() {
     const {
       skin,
@@ -207,6 +199,14 @@ export default {
       toggleVerticalMenuActive,
       overlayClasses,
     }
+  },
+  computed: {
+    layoutContentRenderer() {
+      const rendererType = this.$route.meta.contentRenderer
+      if (rendererType === 'sidebar-left') return 'layout-content-renderer-left'
+      if (rendererType === 'sidebar-left-detached') return 'layout-content-renderer-left-detached'
+      return 'layout-content-renderer-default'
+    },
   },
 }
 </script>

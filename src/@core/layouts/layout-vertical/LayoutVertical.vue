@@ -58,7 +58,7 @@
       >
         <template
           v-for="(index, name) in $scopedSlots"
-          v-slot:[name]="data"
+          #[name]="data"
         >
           <slot
             :name="name"
@@ -109,14 +109,6 @@ export default {
     LayoutContentRendererDefault,
   },
   mixins: [mixinVerticalLayout],
-  computed: {
-    layoutContentRenderer() {
-      const rendererType = this.$route.meta.contentRenderer
-      if (rendererType === 'sidebar-left') return 'layout-content-renderer-left'
-      if (rendererType === 'sidebar-left-detached') return 'layout-content-renderer-left-detached'
-      return 'layout-content-renderer-default'
-    },
-  },
   setup() {
     const {
       routerTransition, navbarBackgroundColor, navbarType, footerType, isNavMenuHidden,
@@ -154,6 +146,14 @@ export default {
       navbarBackgroundColor,
       isNavMenuHidden,
     }
+  },
+  computed: {
+    layoutContentRenderer() {
+      const rendererType = this.$route.meta.contentRenderer
+      if (rendererType === 'sidebar-left') return 'layout-content-renderer-left'
+      if (rendererType === 'sidebar-left-detached') return 'layout-content-renderer-left-detached'
+      return 'layout-content-renderer-default'
+    },
   },
 }
 </script>

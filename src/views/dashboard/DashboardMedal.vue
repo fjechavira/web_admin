@@ -7,7 +7,9 @@
       Has alcanzado el nivel oro en en tu meta de leads mensuales.
     </b-card-text>
     <h3 class="mb-75 mt-2 pt-50">
-      <b-link class="text-warning">Haz ganado un bono de $500.00</b-link>
+      <b-link class="text-warning">
+        Haz ganado un bono de $500.00
+      </b-link>
     </h3>
     <b-img
       :src="require('@/assets/images/illustration/badge.svg')"
