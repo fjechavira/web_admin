@@ -36,7 +36,7 @@
               >
                 <b-form-input
                   id="email"
-                  v-model="userEmail"
+                  v-model="username"
                   name="login-email"
                   :state="errors.length > 0 ? false:null"
                   placeholder=""
@@ -135,7 +135,7 @@ export default {
   mixins: [togglePasswordVisibility],
   data() {
     return {
-      userEmail: 'dmartinez',
+      username: 'dmartinez',
       password: 'hola.putita.123',
       status: '',
     }
@@ -147,7 +147,10 @@ export default {
   },
   methods: {
     login() {
-      this.$router.push('dashboard')
+      this.$store.dispatch('account/login', {
+        username: this.username,
+        password: this.password,
+      })
     },
   },
 }

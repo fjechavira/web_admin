@@ -30,15 +30,15 @@
         <template #button-content>
           <div class="d-sm-flex d-none user-nav">
             <p class="user-name font-weight-bolder mb-0">
-              {{ $store.state.user.name }}
+              {{ $store.state.account.name }}
             </p>
-            <span class="user-status">{{ $store.state.user.type }}</span>
+            <span class="user-status">{{ $store.state.account.type }}</span>
           </div>
           <b-avatar
             size="40"
             variant="light-primary"
             badge
-            :src="$store.state.user.pp"
+            :src="$store.state.account.pp"
             class="badge-minimal"
             badge-variant="success"
           />
