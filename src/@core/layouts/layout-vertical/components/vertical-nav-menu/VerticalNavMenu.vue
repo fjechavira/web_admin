@@ -41,7 +41,7 @@
             </b-link>
           </li>
 
-          <!-- Toggler Button -->
+          <!-- Toggler Button
           <li class="nav-item nav-toggle">
             <b-link class="nav-link modern-nav-toggle">
               <feather-icon
@@ -57,7 +57,7 @@
                 @click="toggleCollapsed"
               />
             </b-link>
-          </li>
+          </li> -->
         </ul>
       </slot>
     </div>

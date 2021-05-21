@@ -3,20 +3,34 @@ export default [
     title: 'Dashboard',
     route: 'dashboard',
     icon: 'HomeIcon',
+    resource: 'Dashboard',
+    action: 'read',
   },
   {
-    title: 'Leads',
-    route: 'leads',
-    icon: 'UserPlusIcon',
-  },
-  {
-    title: 'Agentes',
-    route: 'agentes',
+    title: 'CRM',
     icon: 'UsersIcon',
+    route: 'crm',
+    resource: 'Leads',
+    action: 'read',
+  },
+  {
+    title: 'Productos',
+    icon: 'ShoppingCartIcon',
+  },
+  {
+    title: 'Reportes',
+    icon: 'PieChartIcon',
   },
   {
     title: 'Configuración',
-    route: 'configuracion',
     icon: 'SettingsIcon',
+    children: [
+      {
+        title: 'Agentes',
+        route: 'agentes',
+        action: 'read',
+        resource: 'Auth',
+      },
+    ],
   },
 ]

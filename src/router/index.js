@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { canNavigate } from '@/libs/acl/routeProtection'
+import { isUserLoggedIn, getHomeRouteForLoggedInUser } from '@/auth/utils'
 
 Vue.use(VueRouter)
 
@@ -16,21 +18,37 @@ const router = new VueRouter({
       component: () => import('@/views/Login.vue'),
       meta: {
         layout: 'full',
+        action: 'read',
+        resource: 'Auth',
       },
     },
     {
       path: '/dashboard',
       name: 'dashboard',
+      meta: {
+        action: 'read',
+        resource: 'Auth',
+      },
       component: () => import('@/views/dashboard/Dashboard.vue'),
     },
     {
-      path: '/leads',
-      name: 'leads',
-      component: () => import('@/views/leads/Leads.vue'),
+      path: '/crm',
+      name: 'crm',
+      meta: {
+        action: 'manage',
+        resource: 'Leads',
+      },
+      component: () => import('@/views/crm/CRM.vue'),
     },
     {
       path: '/agentes',
       name: 'agentes',
+      action: 'read',
+      resource: 'Invoice',
+      meta: {
+        action: 'read',
+        resource: 'Auth',
+      },
       component: () => import('@/views/agents/Agents.vue'),
     },
     {
@@ -39,10 +57,33 @@ const router = new VueRouter({
       component: () => import('@/views/error/Error404.vue'),
     },
     {
+      path: '/not-authorized',
+      name: 'not-authorized',
+      component: () => import('@/views/error/NotAuthorized.vue'),
+      meta: {
+        layout: 'full',
+        action: 'read',
+        resource: 'Auth',
+      },
+    },
+    {
       path: '*',
       redirect: 'error-404',
     },
   ],
+})
+
+// Router Before Each hook for route protection
+router.beforeEach((to, _, next) => {
+  const isLoggedIn = isUserLoggedIn()
+  if (!canNavigate(to)) {
+    if (!isLoggedIn) return next({ name: 'login' })
+    return next({ name: 'not-authorized' })
+  }
+  if (to.meta.redirectIfLoggedIn && isLoggedIn) {
+    next(getHomeRouteForLoggedInUser())
+  }
+  return next()
 })
 
 // ? For splash screen

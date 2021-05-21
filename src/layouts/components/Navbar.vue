@@ -22,6 +22,7 @@
     </div>
 
     <b-navbar-nav class="nav align-items-center ml-auto">
+      <!--<dark-Toggler class="d-none d-lg-block" />-->
       <b-nav-item-dropdown
         right
         toggle-class="d-flex align-items-center dropdown-user-link"

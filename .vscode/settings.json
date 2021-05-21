@@ -9,11 +9,12 @@
     "vetur.format.defaultFormatter.ts": "vscode-typescript",
     "files.exclude": {
       "public": true,
-      "src/@core": true,
+      "src/@core": false,
       "src/assets": true,
-      "src/libs": true,
-      "src/navigation": true,
+      "src/libs": false,
+      "src/navigation": false,
       "src/layouts": true,
+      "src/components": true,
       "node_modules": true,
       ".gitignore": true,
       ".browserslistrc": true,
@@ -25,6 +26,6 @@
       "babel.config.js": true,
       "vue.config.js": true,
       "jsconfig.json": true,
-      "package.json": false,
+      "package.json": true,
     }
   }
