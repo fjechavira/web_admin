@@ -137,6 +137,7 @@ export default {
   },
   data() {
     return {
+      searchQuery: '',
       filter: null,
       fields: [
         {
