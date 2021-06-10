@@ -33,4 +33,17 @@ export default [
       },
     ],
   },
+  {
+    title: 'Utilerias',
+    icon: 'ToolIcon',
+    children: [
+      {
+        title: 'Crear Pagos',
+        icon: 'Edit3Icon',
+        route: 'payment',
+        action: 'read',
+        resource: 'Auth',
+      },
+    ],
+  },
 ]

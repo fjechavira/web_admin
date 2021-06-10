@@ -52,6 +52,15 @@ const router = new VueRouter({
       component: () => import('@/views/agents/Agents.vue'),
     },
     {
+      path: '/payment',
+      name: 'payment',
+      meta: {
+        action: 'read',
+        resource: 'Auth',
+      },
+      component: () => import('@/views/payments/Payments.vue'),
+    },
+    {
       path: '/error-404',
       name: 'error-404',
       component: () => import('@/views/error/Error404.vue'),
